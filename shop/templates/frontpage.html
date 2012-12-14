@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Front page{% endblock %}
+
+{% block content %}
+
+{# this content should be stored in the SQL database #}
+
+<h1>This week's pick:</h1>
+<img src="/site_media/weeks_special.jpg" class="frontImage">
+<p>Music label <a href="http://www.gomma.de">Gomma</a> from Munich, Germany. Check out <a href="/products/?label=Gomma">albums from Gomma</a>.</p>
+{% endblock %}

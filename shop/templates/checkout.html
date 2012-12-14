@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Checkout{% endblock %}
+{% block javascript %} 
+<script type="text/javascript">
+	$(function() {
+		$( "#id_shippingDate" ).datepicker({ dateFormat: 'yy-mm-dd' });
+	});
+</script>
+
+
+{% endblock %}
+{% block content %}
+
+{# this content should be stored in the SQL database #}
+
+<h1>Checkout</h1>
+
+{% if productsInCart %}
+	<p>In cart:</p>
+
+	{% for p in productsInCart %}
+		<p>{{p.amount}}x {{p.title}}</p>
+		<p><a href="/cart/?remove={{p.id}}">Remove from cart</a></p>
+		<p>{{p.price}}</p>
+	{% endfor %}
+{% endif %}
+<p>Total amount:<span id="totalAmount">{{total}}</span><p>
+
+<form method="POST" action="/cart/confirm/">
+	{{form.as_table}}
+	<input type="submit" value="Confirm" />
+</form>
+
+{% endblock %}

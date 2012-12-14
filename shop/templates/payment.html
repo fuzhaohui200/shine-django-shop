@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Order confirmed{% endblock %}
+
+{% block content %}
+
+{# this content should be stored in the SQL database #}
+
+<h1>Order {{order.id}} confirmed </h1>
+{% if success %}
+<p>payment successful. Thank you!</p>
+
+{% else %}
+{%if error or cancel %}
+<p>there was an error, please try again</p>
+{# -{{pid}}-{{ref}}-{{checksum}}-{{checksum_new}} #}
+{% endif %}
+<p>Choose payment</p>
+{% include "payment_form.html" %}
+{% endif %}
+{% endblock %}

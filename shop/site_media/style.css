@@ -1,0 +1,360 @@
+* {margin: 0; padding: 0;}
+
+html, body
+{
+	height: 100%;
+}
+body
+{
+	background: #888;
+	min-width: 600px;
+	text-rendering: optimizeLegibility;
+	font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+}
+
+h1
+{
+	font-size: 14pt;
+	padding-bottom: 10px;
+}
+
+h2
+{
+	font-size: 12pt;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+p
+{
+	padding-bottom: 0.5em;
+}
+
+blockquote
+{
+	margin: 0cm 1cm;
+}
+
+div.comment
+{
+	width: 30em;
+	background: #ddd;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+div#wrap
+{
+	box-shadow: 3px 3px 4px #555, -3px -3px 4px #555;
+	-webkit-box-shadow: 3px 3px 10px #555, -3px -3px 10px #555;
+	-moz-box-shadow: 3px 3px 10px #555, -3px -3px 10px #555;
+
+	background: #eee;
+	margin-left: auto;
+	margin-right: auto;
+	width: 950px;
+	padding-left: 20px;
+	padding-right: 20px;
+	min-height: 100%;
+}
+
+div#main
+{
+	overflow: auto;
+	padding-bottom: 105px;
+}
+
+div#floatingfooter
+{
+	text-align: center;
+	/*background: #ccc;*/
+	position: relative;
+	margin-top: -105px;
+	padding-top: 5px;
+	height: 100px;
+	font-size: 8pt;
+	font-weight: bold;
+	clear: both;
+}
+
+/*Opera Fix*/
+body:before {/* thanks to Maleika (Kohoutec)*/
+content:"";
+height:100%;
+float:left;
+width:0;
+margin-top:-32767px;/* thank you Erik J - negate effect of float*/
+}
+
+
+div#sidebar
+{
+	position: relative;
+	font-weight: bold;
+}
+
+div#sidebar ul
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+div#sidebar > ul >li
+{
+	float: left;
+	margin: 0 0.15em;
+}
+
+div#menu
+{
+	margin-top: 10px;
+	position: relative;
+	display: block;
+	/*margin-left: auto;
+	margin-right: auto;
+	width: 24.2em;*/
+	font-size: 70%;
+}
+
+div#content
+{
+	margin-top: 10px;
+	clear: both;
+}
+
+img.productImage {
+	float: left;
+	border: 3px solid;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-color: #555;
+	margin-right: 10px;
+}
+
+div.productBox {
+	background: #ccc;
+	padding: 10px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	float: left;
+	width: 150px;
+	min-height: 170px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+a:hover div.productBox {
+	background: #ddd;
+}
+
+a {
+	text-decoration: none;
+}
+
+div.productBox > div {
+	display: block;
+	vertical-align: middle;
+}
+
+img.productThumbnail {
+	/*float: left;*/
+	display: block;
+	vertical-align: middle;
+	height: 100px;
+	border: 3px solid;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-color: #555;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5px;
+}
+
+form#rating, form#rating ul, form#rating li {
+	display: inline;
+}
+
+input[type="submit"]
+{
+	border: 2px solid #999;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	background: #bbb;
+	font-size: 12pt;
+	padding: 0.5em 1em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1ex;
+	margin-bottom: 0ex;
+}
+
+input[type="submit"]:hover
+{
+	background: #aaa;
+	text-decoration: underline;
+}
+
+table.login
+{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table.login td
+{
+	width: 40%;
+	vertical-align: top;
+	background: #ddd;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	padding: 15px;
+}
+
+img.frontImage {
+	width: 950px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	margin-bottom: 5px;
+}
+
+.bubplastic.horizontal {
+	width: 100%;
+	height: 27px;
+	margin: 0;
+	padding: 0;
+	background: #000000 url(/site_media/images/bg-bubplastic.gif) top left repeat-x;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	
+}
+.bubplastic.horizontal ul {
+	list-style: none;
+	margin: 0;
+	/*margin-right: auto;
+	margin-left: auto;*/
+	padding: 0;
+}
+.bubplastic.horizontal ul li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	background: transparent;
+}
+
+.bubplastic.horizontal ul li a {
+	display: block;
+	height: 21px;
+	padding-top: 6px;
+	width: 8em;
+	/*
+	padding-left: 20px;
+	padding-right: 20px;
+	*/
+	float: left;
+	/*text-transform: uppercase;*/
+	font-family: "Helvetica Neue",helvetica,"microsoft sans serif",arial,sans-serif;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.bubplastic.horizontal > a#cart {
+	float: right;
+	font-size: 70%;
+	display: block;
+	height: 22px;
+	padding-top: 6px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	/*text-transform: uppercase;*/
+	font-family: "Helvetica Neue",helvetica,"microsoft sans serif",arial,sans-serif;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.bubplastic.horizontal > span.left {
+	display: block;
+	height: 27px;
+	float: left;
+	font-family: "Helvetica Neue",helvetica,"microsoft sans serif",arial,sans-serif;
+	font-size: 70%;
+	font-style: italic;
+	color: #ccc;
+	text-decoration: none;
+	
+	display: block;
+	height: 22px;
+	padding-top: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background: transparent;
+	/*cursor: pointer;*/
+}
+.bubplastic.horizontal > span.right {
+	display: block;
+	height: 27px;
+	font-family: "Helvetica Neue",helvetica,"microsoft sans serif",arial,sans-serif;
+	font-size: 70%;
+	color: #ccc;
+	text-decoration: none;
+	
+	display: block;
+	float: right;
+	height: 22px;
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	background: transparent;
+	/*cursor: pointer;*/
+}
+
+
+/* BLUE HOVER */
+/*
+.bubplastic.blue ul li a:hover,
+.bubplastic.blue ul li.highlight a {
+	background: transparent url(/site_media/images/bg-bubplastic-h-blue.gif) top left no-repeat;
+}
+*/.bubplastic.blue ul li a.highlight
+{
+	background: transparent url(/site_media/images/bg-bubplastic-h-blue.gif) top right no-repeat;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.bubplastic.blue ul li a:hover,
+.bubplastic.blue a:hover 
+{
+	background: transparent url(/site_media/images/bg-bubplastic-h-aqua.gif) top right no-repeat;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+
+.clearit {
+	margin: 0;
+	padding: 0;
+	height: 0;
+	clear: both;
+}
+
+

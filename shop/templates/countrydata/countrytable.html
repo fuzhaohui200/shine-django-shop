@@ -1,0 +1,26 @@
+<!-- Write your answer in 5.3 here -->
+
+{% block content %}
+{% if continent %}
+<table id="countryTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Capital</th>
+            <th>Population</th>
+            <th>Area</th>
+        </tr>
+    </thead>
+    {% for country in countries %}
+    <tbody>
+        <tr>
+            <td>{{country.name}}</td>
+            <td>{{country.capital}}</td>
+            <td>{{country.population}}</td>
+            <td>{{country.area}}</td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+{% endif %}
+{% endblock %}

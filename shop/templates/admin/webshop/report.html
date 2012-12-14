@@ -1,0 +1,44 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %} 
+{% block title %}Webshop report{% endblock %}
+{% block breadcrumbs %}<div class="breadcrumbs"><a href="/admin/">{% trans "Home" %}</a> > Report</div>
+{% endblock %}
+
+{% block content %}
+
+<div id="content-main">
+<h1> Webshop report</h1>
+  <h2>Top 10 products:</h2>
+  
+<ol>
+  {% for p in saleitems_list %}
+    <li>{{ p.product__title }} Sold: {{p.count}} items</li>
+
+  {% endfor %}
+</ol>  
+<h2>Most commented products:</h1>
+  
+<ol>
+  {% for p in commented_list %}
+    <li>{{ p.product__title }} # comments: {{p.count}} </li>
+
+  {% endfor %}
+</ol>  
+<h2>Best rated products:</h1>
+  
+<ol>
+  {% for p in rated_list %}
+    <li>{{ p.product__title }} Rating: {{p.rate}} </li>
+
+  {% endfor %}
+</ol> 
+<h2>Most active users:</h1>
+
+<ol>
+  {% for u in users_list %}
+    <li>{{ u.user__username }}  </li>
+
+  {% endfor %}
+</ol> 
+</div>
+{% endblock %}

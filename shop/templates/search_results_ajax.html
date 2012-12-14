@@ -1,0 +1,10 @@
+{% if products %}
+    <p>Found {{ products|length }} product{{ products|pluralize }}.</p>
+    <ul id="ajax_results">
+        {% for product in products %}
+        <li><a href="/products/{{product.id}}/">{{ product.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No products matched your search criteria.</p>
+{% endif %}

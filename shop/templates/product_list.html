@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Products{% endblock %}
+{%block javascript %}
+	<script type="text/javascript" src="/site_media/scripts/jquery.liveSearch.js"></script>
+	<link rel="stylesheet" href="/site_media/jquery.liveSearch.css" />
+	<script type="text/javascript">
+	<!--
+	$(function() {
+		$( "#slider-range" ).slider({
+			range: true,
+			min: 0,
+			max: {{range.max}},
+			values: [ {{range.min}}, {{range.max}} ],
+            step:0.01,
+			slide: function( event, ui ) {
+				$( "#amount" ).val( "€" + ui.values[ 0 ] + " - €" + ui.values[ 1 ] );
+                
+			},
+            change: function( event, ui ) {
+            //load the part of the page that gets updated (products matching query )
+             $('div#products_container').load('/products/?min='+ui.values[ 0 ]+'&max='+ui.values[ 1 ]+' #products_container');   
+			}
+		});
+		$( "#amount" ).val( "€" + $( "#slider-range" ).slider( "values", 0 ) +
+			" - €" + $( "#slider-range" ).slider( "values", 1 ) );
+	});
+	-->
+	</script>
+	<script type="text/javascript">
+	$(function() {
+        // jquery live search from: http://andreaslagerkvist.com/jquery/live-search/
+		$('form input[name="q"]').liveSearch({url: '/search/?q='});
+	});
+	</script>
+{% endblock %}
+
+{% block content %}
+<h1>Products</h1>
+{% include "search_form.html" %}
+
+<!--
+<p>
+	<label for="amount">Price range:</label>
+	<input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;" />
+</p>
+
+<div id="slider-range"></div>
+-->
+
+<div id="products_container">
+{% if label %}
+<p>Showing available products from music label <em>{{label}}</em>. <a href="/products/">Show all</a>.</p>
+{% endif %}
+
+{% for c in categories %}
+	<h2>Category: {{c.title}}</h2>
+	{% for p in c.prods %}
+		<div class="productBox">
+		<div>
+		<a href="/products/{{p.id}}"> {# lynx compatibility #}
+		{% if p.imageUrl %}
+			<img src="{{p.imageUrl}}" class="productThumbnail" alt=""/>
+		{% endif %}
+		{{p.title}}
+		</a>
+		</div>
+		</div>
+	{% endfor %}
+
+	<div style="clear: both;"></div>
+{% endfor %}
+
+{% if products_list %}
+	{% for p in products_list %}
+		<div class="productBox">
+		<div>
+		<a href="/products/{{p.id}}"> {# lynx compatibility #}
+		{% if p.imageUrl %}
+			<img src="{{p.imageUrl}}" class="productThumbnail" />
+		{% endif %}
+		<p>
+		{{p.title}}
+		</a>
+		</p>
+		</div>
+		</div>
+	{% endfor %}
+{% endif %}
+</div>
+{% endblock %}

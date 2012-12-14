@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Search Results{% endblock %}
+{% block content %}
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if products %}
+    <p>Found {{ products|length }} product{{ products|pluralize }}.</p>
+    <ul>
+        {% for product in products %}
+        <li><a href="/products/{{product.id}}/">{{ product.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No products matched your search criteria.</p>
+{% endif %}
+
+{% endblock %}

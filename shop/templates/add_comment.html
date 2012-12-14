@@ -1,0 +1,9 @@
+<html>
+<body>
+<form method="post" action="/comment/{{product_id}}/{% if parent_id %}{{parent_id}}/{% endif %}">
+{{ form.comment }}
+<input type="hidden" id="id_parent" name="parent" value="{{parent_id|default_if_none:0}}">
+	<input type="submit" value="comment" id="commentSend"/>
+</form>
+</body>
+</html>

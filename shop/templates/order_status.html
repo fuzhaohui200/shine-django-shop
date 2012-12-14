@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+
+{% block title %}Order {{order.id}} status{% endblock %}
+
+{% block content %}
+<h1>Order {{order.id}} status</h1>
+<h2>items</h2>
+{% for i in items %}
+<p>{{i.id}} {{i.product.title}} {{i.price|floatformat:2}}&euro; shipped:{{i.shipped|yesno:"Yes,No"}}</p>
+{% endfor %}
+<p>Status: {{order.completed|yesno:"Complete,Not Complete"}} Payment completed: {{order.ref|yesno:"Yes,No"}}</p> 
+{% if not order.ref %}
+{% include "payment_form.html" %}
+{% endif %}
+{% endblock %}
